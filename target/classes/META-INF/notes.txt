@@ -1,0 +1,31 @@
+<property name="javax.persistence.jdbc.url" //URL DO BANCO DE DADOS
+value="jdbc:mysql://localhost:3306 //SINTAXE DE CONEXÃO COM SQL
+/aulajpa //BASE DE DADOS
+? //INICIALIZADOR DE ATRIBUTOS
+useSSL=FALSE //ATRIBUTO
+&amp; //CONCATENADOR DE ATRIBUTOS
+serverTimezone=UTC" />
+
+<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+<property name="javax.persistence.jdbc.user" value="root" />
+<property name="javax.persistence.jdbc.password" value="" />
+
+//GERAR AUTOMATICAMENTE O BANCO DE DADOS
+<property name="hibernate.hbm2ddl.auto" 
+
+//SEMPRE QUE RODAR A APLICAÇÃO, O BANCO DE DADOS VAI ATUALIZAR AUTOMATICAMENTE CONFORME CLASSES DE DOMINIO DA APLICAÇÃO.
+value="update" />
+
+
+<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+
+1 - Como o JPA funciona?
+R: Por padrão, ele cria uma tabela com o mesmo nome da classe e dentro dela ele criará os mesmos atributos com os atributos da classe
+
+2 - Não é possível remover instancias destacadas do banco de dado, é necessário buscar a informação primeiro para depois remover.
+
+3 - A Entidade monitorada é o oposto de intancias destacadas. Trata-se de intancias que foram recem inseridas ou recem buscadas no banco de dados
+e o EntityManager não foi finalizado antes dessa busca.
+
+4 - Instancias destacadas são entidades persistentes de fluxos anteriores finalizados e que não podem ser alterados, necessidando de uma nova
+busca para uma alteração, tornando-se uma entidade monitorada.
